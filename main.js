@@ -1,7 +1,13 @@
+if (!navigator.mediaDevices){
+  alert("Sorry, getUserMedia is not supported");
+}
+
 function main(){
 	window.addEventListener("deviceorientation", onOrientationChange);
 
-	navigator.mediaDevices.getDisplayMedia({video:true})
+	navigator.mediaDevices.getDisplayMedia({video:{
+		facingMode:'enviroment'
+	}})
 		.then((signal)=>{
 			const video=document.getElementById('my_video');
 			video.srcObject=signal;
