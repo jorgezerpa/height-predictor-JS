@@ -6,7 +6,7 @@ function main(){
 	window.addEventListener("deviceorientation", onOrientationChange);
 
 	navigator.mediaDevices.getUserMedia({video:{
-		facingMode:'evironment'
+		facingMode:'environment'
 	}})
 		.then((signal)=>{
 			const video=document.getElementById('my_video');
